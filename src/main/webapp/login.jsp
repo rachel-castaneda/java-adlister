@@ -22,19 +22,6 @@
         </div>
     </form>
 
-    <%
-        PrintWriter printer = response.getWriter();
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        if (username != null && password != null) {
-            if (username.equals("user") && password.equals("password")) {
-                response.sendRedirect("/profile.jsp?username="+username);
-            } else {
-                response.sendRedirect("/login.jsp");
-            }
-        }
-    %>
-
     <%@ include file="/partials/head.jsp" %>
 </body>
 
