@@ -24,6 +24,10 @@ public class MySQLAdsDao implements Ads {
 
     }
 
+    public static void setConfig(Config config) {
+        MySQLAdsDao.config = config;
+    }
+
     @Override
     public Long insert(Ad ad) {
         String query = String.format(
@@ -117,6 +121,7 @@ public class MySQLAdsDao implements Ads {
 //        Ad newAd = new Ad(1, "Test", "test");
 //        dao.insert(newAd);
         List<Ad> ads = dao.all();
+        ads.add(new Ad('1', "xbox", "xbox"));
         for (Ad ad : ads) {
             System.out.println(ad.getTitle());
         }
